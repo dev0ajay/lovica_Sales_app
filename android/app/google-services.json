@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "400444735455",
+    "project_id": "lovica-sales",
+    "storage_bucket": "lovica-sales.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400444735455:android:98e4c63a37fa2d73d50e6a",
+        "android_client_info": {
+          "package_name": "com.crayotech.lovica_sales_app.lovica_sales_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDH8_N2EguEJ0qA584zyGh16VSIRVfvZP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
