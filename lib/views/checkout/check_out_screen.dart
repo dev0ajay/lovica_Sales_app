@@ -650,6 +650,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                               child: Padding(
                                 padding: EdgeInsets.all(10.w),
                                 child: TextFormField(
+                                  keyboardType: TextInputType.multiline,
                                     maxLines: 6,
                                     textAlignVertical: TextAlignVertical.top,
                                     textInputAction: TextInputAction.done,

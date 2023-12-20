@@ -295,7 +295,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                       color:
                                                           HexColor("#7A7A7A")),
                                               labelText:
-                                                  Constants.searchForOrderId,
+                                                  Constants.searchForProducts,
                                               controller: searchController,
                                               style: FontPalette.grey12Italic
                                                   .copyWith(
@@ -338,7 +338,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                     Assets.iconsBackIcon)),
                                           ),
                                           SizedBox(
-                                            width: 8.w,
+                                            width: 8.w
                                           ),
                                           Expanded(
                                             child: CustomTextFormField(
@@ -408,7 +408,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                                       color:
                                                           HexColor("#7A7A7A")),
                                               labelText:
-                                                  Constants.searchForOrderId,
+                                                  Constants.searchForProducts,
                                               controller: searchController,
                                               style: FontPalette.grey12Italic
                                                   .copyWith(

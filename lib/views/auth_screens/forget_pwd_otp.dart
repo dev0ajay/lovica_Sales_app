@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lovica_sales_app/common/font_palette.dart';
+import 'package:lovica_sales_app/common/helpers.dart';
 import 'package:lovica_sales_app/widgets/custom_common_button.dart';
 import 'package:lovica_sales_app/generated/assets.dart';
 import 'package:provider/provider.dart';
@@ -119,12 +121,15 @@ class _ForgetPwdOtpScreenState extends State<ForgetPwdOtpScreen> {
 
                            );
                            // ignore: use_build_context_synchronously
-                           Navigator.pushReplacement(
-                             context,
-                             MaterialPageRoute(
-                               builder: (context) =>  ForgetPwdChangeScreen(uName: widget.uName)
-                             ),
-                           );
+                          if(value.status_code == 200) {
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>  ForgetPwdChangeScreen(uName: widget.uName)
+                              ),
+                            );
+                          }
 
                           } else {
                             debugPrint("Invalid validation");

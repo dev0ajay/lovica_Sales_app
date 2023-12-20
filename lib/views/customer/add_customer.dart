@@ -78,14 +78,14 @@ class _AddCustomerScreenState extends State<AddCustomerScreen> {
                         Column(
                           children: [
                             HeaderTile(
-                              showAppIcon: true,
+                              showAppIcon: false,
                               title: Constants.addNewCust,
                               onTapBack: () {
                                 Navigator.pop(context);
                               },
                             ),
                             SizedBox(
-                              height: 17.h,
+                              height: 17.h
                             ),
                             Directionality(
                               textDirection: AppData.appLocale == "ar"

@@ -34,6 +34,7 @@ class AuthenticationProvider extends ChangeNotifier with ProviderHelperClass {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
   AndroidDeviceInfo? androidInfo;
   IosDeviceInfo? iosInfo;
+  int status_code = 0;
 
 
   Future<void> login(
@@ -523,6 +524,7 @@ class AuthenticationProvider extends ChangeNotifier with ProviderHelperClass {
         }
 
         if (_resp != null && _resp["status_code"] == 200) {
+          status_code = _resp["status_code"];
           FocusManager.instance.primaryFocus?.unfocus();
           if (_resp != null) {
             Helpers.showToast(AppData.appLocale == "ar"

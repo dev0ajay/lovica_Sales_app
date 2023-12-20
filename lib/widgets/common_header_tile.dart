@@ -73,14 +73,15 @@ class HeaderTile extends StatelessWidget {
                     child: SizedBox(
                       height: 24.h,
                       width: 28.w,
-                      child: Image.asset(showDetailIcon
+                      child: Image.asset(
+                          showDetailIcon
                           ? Assets.iconsPdtGridIconSelected
                           : Assets.iconsPdtGridIconUnselected),
                     ),
                   ),
                 ],
               )
-                  : SizedBox(),
+                  : const SizedBox(),
               showAppIcon ?? true
                   ? Row(
                 mainAxisAlignment: MainAxisAlignment.end,

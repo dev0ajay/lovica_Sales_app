@@ -4,25 +4,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lovica_sales_app/common/font_palette.dart';
 import 'package:lovica_sales_app/providers/localization_provider.dart';
 import 'package:lovica_sales_app/widgets/common_header_tile.dart';
-import 'package:lovica_sales_app/widgets/custom_common_button.dart';
 import 'package:provider/provider.dart';
-
 import '../../common/color_palette.dart';
 import '../../common/constants.dart';
 import '../../common/network_connectivity.dart';
 import '../../common/validator.dart';
 import '../../models/city_model.dart';
 import '../../models/order_list_model.dart';
-import '../../providers/authentication_provider.dart';
 import '../../providers/check_out_provider.dart';
 import '../../services/app_data.dart';
-import '../../widgets/custom_dialog.dart';
 import '../../widgets/custom_text_field.dart';
-import '../../widgets/dropdown/custom_dropdown.dart';
 import '../../widgets/reusable_widgets.dart';
 
 class TrackingScreen extends StatefulWidget {
-  const TrackingScreen({Key? key}) : super(key: key);
+  const TrackingScreen({super.key});
 
   @override
   State<TrackingScreen> createState() => _TrackingScreenState();
@@ -262,7 +257,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
                                                             : item.shippingStatus ??
                                                                 "",
                                                         textAlign:
-                                                            TextAlign.start,
+                                                            TextAlign.center,
                                                         style: TextStyle(
                                                           color: item.shippingStatus ==
                                                                   "Pending"
@@ -339,7 +334,7 @@ class _TrackingScreenState extends State<TrackingScreen> {
           ),
         ),
         SizedBox(
-          width: 12.w,
+          width: 12.w
         )
       ],
     );

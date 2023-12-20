@@ -273,7 +273,7 @@ class _SalesScreenState extends State<SalesScreen> {
                                                           children: [
                                                             Text(
                                                               "${Constants.name} : ${item.customerName ?? ""}",
-                                                              maxLines: 1,
+                                                              maxLines: 5,
                                                               style: FontPalette
                                                                   .black12Regular,
                                                             ),
@@ -282,7 +282,7 @@ class _SalesScreenState extends State<SalesScreen> {
                                                             ),
                                                             Text(
                                                               "${Constants.city} : ${AppData.appLocale=="ar"?item.arcity ?? "":item.city?? ""}",
-
+                                                                maxLines: 2,
                                                               style: FontPalette
                                                                   .grey10Regular,
                                                             ),

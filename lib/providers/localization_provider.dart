@@ -1020,9 +1020,14 @@ class AppLocalizationProvider extends ChangeNotifier with ProviderHelperClass {
           updateLoadState(LoadState.loaded);
         }
 
-        if (_resp != null && _resp["status_code"] == 200) {
+        if (_resp != null && _resp["cms_management_id"] == "1") {
           data = TermsAndConditionResponse.fromJson(_resp);
-
+          cmsManagementId = data.cmsManagementId;
+          headingEn = data.headingEn;
+          headingAr = data.headingAr;
+          contentAr = data.contentAr;
+          contentEn = data.contentEn;
+          notifyListeners();
           Future.microtask(() async {
             await Navigator.pushReplacement(
               context,
@@ -1108,7 +1113,7 @@ class AppLocalizationProvider extends ChangeNotifier with ProviderHelperClass {
         } else {
           Fluttertoast.showToast(
               msg: AppData.appLocale == "ar"
-                  ? _resp["msg_ar"]
+                  ? _resp["msg"]
                   : _resp["msg_en"]);
         }
       } catch (_) {

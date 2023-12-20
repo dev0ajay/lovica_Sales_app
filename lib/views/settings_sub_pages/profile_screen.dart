@@ -184,9 +184,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       SizedBox(
                                         width: 175,
                                         child: CustomTextFormField(
-                                          // suffix: suffixWidget(value.isMobileVerified
-                                          //     ? Constants.verified
-                                          //     : Constants.verify),
                                           maxLength: value.countrySelected?.maxLength??10,
                                           inputType: TextInputType.phone,
                                           hintText: Constants.enterMob,

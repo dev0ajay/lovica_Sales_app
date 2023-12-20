@@ -113,6 +113,7 @@ class OrderItem {
       }
     }
     subTotal = json['sub_total'];
+
     discountAmount = json['discount_amount'];
     totalSplPrice = json['total_spl_price'];
     taxAmount = json['tax_amount'];
@@ -151,6 +152,7 @@ class OrderItem {
     }
     orderDate = json['order_date'];
     customerName = json['customer_name'];
+
   }
 
   Map<String, dynamic> toJson() {

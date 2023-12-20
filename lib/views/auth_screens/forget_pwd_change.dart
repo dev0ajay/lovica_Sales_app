@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lovica_sales_app/common/font_palette.dart';
+import 'package:lovica_sales_app/common/helpers.dart';
 import 'package:lovica_sales_app/views/auth_screens/login.dart';
 import 'package:lovica_sales_app/widgets/custom_common_button.dart';
 import 'package:lovica_sales_app/generated/assets.dart';
@@ -139,18 +140,24 @@ class _ForgetPwdChangeScreenState extends State<ForgetPwdChangeScreen> {
                         onTap: () async {
                           if (_formKey.currentState?.validate() ?? false) {
                             print("Username: ${widget.uName}");
-                             await context
-                                .read<AuthenticationProvider>()
-                                .fgtPwdChange(
-                                    context: context,
-                                    password: _passwordController.text,
-                                    uName: widget.uName ?? "");
+                            if (_passwordConfirmController ==
+                                _passwordController) {
+                              await context
+                                  .read<AuthenticationProvider>()
+                                  .fgtPwdChange(
+                                      context: context,
+                                      password: _passwordController.text,
+                                      uName: widget.uName ?? "");
+                            } else {
+                              Helpers.showToast(
+                                  "Please check the password you have entered");
+                            }
+
                             // ignore: use_build_context_synchronously
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>  const LogInScreen()
-                              ),
+                                  builder: (context) => const LogInScreen()),
                             );
 
                             // if (updateResult) {}
@@ -198,16 +205,17 @@ class _ForgetPwdChangeScreenState extends State<ForgetPwdChangeScreen> {
       ],
     );
   }
+
 // this method shows the modal dialog
   dynamic _showModal(BuildContext context) async {
     // show the modal dialog and pass some data to it
     final result = await Navigator.of(context).push(FullScreenModal(
-        title: Constants.pwdChanged,
-        description: 'Goto Login page'));
+        title: Constants.pwdChanged, description: 'Goto Login page'));
 
     // print the data returned by the modal if any
     debugPrint(result.toString());
   }
+
   @override
   void dispose() {
     _passwordController.dispose();

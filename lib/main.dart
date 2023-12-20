@@ -29,6 +29,7 @@ checkForInitialMessage() async {
       body: initialMessage.notification?.body,
       dataTitle: initialMessage.data['title'],
       dataBody: initialMessage.data['body'],
+
     );
     print(
         'checkForInitialMessage _firebaseMessagingBackgroundHandler :: Message title: ${notification.title}, body: ${notification.body}');
